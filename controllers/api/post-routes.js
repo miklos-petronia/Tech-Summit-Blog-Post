@@ -16,7 +16,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-// UPDATing the POST
+// Updating the POST application
 router.put('/:id', withAuth, async (req, res) => {
     try {
         console.log('here is the req.body', req.body);
@@ -35,3 +35,24 @@ router.put('/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// Deleting the POST Application
+router.delete('/:id', withAuth, async (req, res) => {
+    try {
+        const [affectedRows] = Post.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        if (affectedRows > 0) {
+            res.status(200).end();
+        } else {
+            res.status(404).end();
+        }
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+module.exports = router;
