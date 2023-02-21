@@ -11,3 +11,7 @@ router.get('/', withAuth, async (req, res) => {
             where: { "userId": req.session.userId },
             include: [User]
         });
+
+    // this sanitizes the data information. we just got from the databse above (you have to develop the above)
+        const posts = postData.map((post) => post.get({ plain: true }));
+        console.log(posts);
