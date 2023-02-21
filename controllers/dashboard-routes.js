@@ -15,3 +15,15 @@ router.get('/', withAuth, async (req, res) => {
     // this sanitizes the data information. we just got from the databse above (you have to develop the above)
         const posts = postData.map((post) => post.get({ plain: true }));
         console.log(posts);
+
+        // Insert into the view to be rendered "DONE!"
+        res.render('all-posts', {
+        // This is a different layout other than main! no change are needed
+            layout: 'dashboard',
+            // forthcoming from line 10 above, no change needed
+            posts,
+        });
+    } catch (err) {
+        res.redirect('login');
+    }
+});
