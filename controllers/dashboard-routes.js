@@ -27,3 +27,12 @@ router.get('/', withAuth, async (req, res) => {
         res.redirect('login');
     }
 });
+
+// After clicking on a new post button 
+router.get('/new', withAuth, (req, res) => {
+    // what aspect should we send the client when they want to develop a new post? 
+    res.render('new-post', {
+        // anew, rendering with a distinctive layout than main! no changs are needed
+        layout: 'dashboard',
+    });
+});
