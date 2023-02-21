@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Obatin a single post
+// get single post
 router.get('/post/:id', withAuth, async (req, res) => {
     try {
         // what should we pass here? we need to get some data passed via the request body (something.something.id?)
@@ -36,9 +36,9 @@ router.get('/post/:id', withAuth, async (req, res) => {
         });
 
         if (postData) {
-            // Serialize the data information
+            // serialize the data
             const post = postData.get({ plain: true });
-            // Which aspect should we render for a single-post? 
+            // which view should we render for a single-post? - DONE!
             console.log(post);
             res.render('single-post', { post, loggedIn: req.session.loggedIn });
         } else {
@@ -49,7 +49,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     }
 });
 
-// Offering the login and signup route application below, no changes are needed.
+// giving you the login and signup route pieces below, no changes needed.
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/dashboard');

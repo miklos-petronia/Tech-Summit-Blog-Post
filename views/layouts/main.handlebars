@@ -16,7 +16,7 @@
         <ul>
             <li class="li-inline nav-item"><a href="/">Home</a></li>
             <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-            <!-- tentatively distribute login link with UNLESS-->
+            <!-- Conditionally render login link with UNLESS-->
             {{#unless loggedIn}}
             <li class="li-inline nav-item"><a href="/login">Login</a></li>
             {{/unless}}
