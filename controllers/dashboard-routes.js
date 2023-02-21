@@ -36,3 +36,28 @@ router.get('/new', withAuth, (req, res) => {
         layout: 'dashboard',
     });
 });
+
+// When clicking ON THE POST itself
+router.get('/edit/:id', withAuth, async (req, res) => {
+    try {
+        //  We need to get some data information passed via the request body 
+        const postData = await Post.findByPk(req.params.id);
+
+        if (postData) {
+            // serializing the data information
+            const post = postData.get({ plain: true });
+            console.log(post);
+            // which view should we render if we want to alter a post?
+            res.render('edit-post', {
+                layout: 'dashboard',
+                post,
+            });
+        } else {
+            res.status(404).end();
+        }
+    } catch (err) {
+        res.redirect('login');
+    }
+});
+
+module.exports = router;
