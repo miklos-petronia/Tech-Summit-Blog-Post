@@ -42,3 +42,11 @@ const deleteClickHandler = async () => {
 
     document.location.replace('/dashboard');
 };
+
+// One button is submitting and the other is clicking
+document
+    .querySelector('#edit-post-form')
+    .addEventListener('submit', editFormHandler);
+document
+    .querySelector('#delete-btn')
+    .addEventListener('click', deleteClickHandler);
