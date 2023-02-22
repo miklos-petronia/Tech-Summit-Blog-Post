@@ -1,4 +1,2 @@
-DROP DATABASE IF EXISTS tech_blog_db;
-CREATE DATABASE tech_blog_db;
-
-USE tech_blog_db;
+DROP DATABASE IF EXISTS mvc_tech_blog_db;
+CREATE DATABASE mvc_tech_blog_db;
