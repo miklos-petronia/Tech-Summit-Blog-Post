@@ -7,45 +7,45 @@ console.log(postId);
 // ];
 
 const editFormHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const postTitle = document.querySelector('input[name="post-title"]').value;
-    const postContent = document.querySelector('textarea[name="post-body"]').value;
+  const postTitle = document.querySelector('input[name="post-title"]').value;
+  const postContent = document.querySelector('textarea[name="post-body"]').value;
 
-    console.log(postTitle);
-    console.log(postContent);
+  console.log(postTitle);
+  console.log(postContent);
 
-    const response = await fetch(`/api/post/${postId}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-            postTitle,
-            postContent,
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-
-    console.log(response);
-    if (response.ok) {
-        document.location.replace('/dashboard');
-    } else {
-        alert('Failed to update your post');
+  const response = await fetch(`/api/post/${postId}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      postTitle,
+      postContent,
+    }),
+    headers: {
+      'Content-Type': 'application/json'
     }
+  });
+
+  console.log(response);
+  if (response.ok) {
     document.location.replace('/dashboard');
+  } else {
+    alert('Failed to update your post');
+  }
+  document.location.replace('/dashboard');
 };
 
 const deleteClickHandler = async () => {
-    await fetch(`/api/post/${postId}`, {
-        method: 'DELETE'
-    });
+  await fetch(`/api/post/${postId}`, {
+    method: 'DELETE'
+  });
 
-    document.location.replace('/dashboard');
+  document.location.replace('/dashboard');
 };
 // WHY ONE BUTTON IS SUBMIT AND THE OTHER IS CLICK?
 document
-    .querySelector('#edit-post-form')
-    .addEventListener('submit', editFormHandler);
+  .querySelector('#edit-post-form')
+  .addEventListener('submit', editFormHandler);
 document
-    .querySelector('#delete-btn')
-    .addEventListener('click', deleteClickHandler);
+  .querySelector('#delete-btn')
+  .addEventListener('click', deleteClickHandler);
