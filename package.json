@@ -5,11 +5,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node app.js",
     "seed": "node seeds/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Miklos Petronia",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -20,5 +20,14 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.28.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miklos-petronia/Tech-Summit-Blog-Post.git"
+  },
+  "bugs": {
+    "url": "https://github.com/miklos-petronia/Tech-Summit-Blog-Post/issues"
+  },
+  "homepage": "https://github.com/miklos-petronia/Tech-Summit-Blog-Post#readme"
 }
