@@ -7,7 +7,8 @@ router.get('/', withAuth, async (req, res) => {
   const commentData = await Comment.findAll({
     include: [User],
   });
-// serialize the data
+
+  // successive the data information
   const comments = commentData.map((comment) => comment.get({ plain: true }));
 
   console.log(comments);

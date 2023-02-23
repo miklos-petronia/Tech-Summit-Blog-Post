@@ -36,7 +36,7 @@ class User extends Model {
   },
   
   // Hooks are automatic methods that run during various phases of the Pass Model lifecycle
-  // In this case, before a Pass is created or updated, we will automatically hash their password
+  //  Automatically hash their password
   {
     hooks: {
       beforeCreate: async (newUserData) => {

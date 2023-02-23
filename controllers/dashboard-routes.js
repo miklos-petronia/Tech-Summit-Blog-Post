@@ -2,23 +2,23 @@ const router = require('express').Router();
 const { Post, User } = require('../models/');
 const withAuth = require('../utils/auth');
 
-// ALL POSTS DASHBOARD
+// All POSTS Dashboard application
 router.get('/', withAuth, async (req, res) => {
   try {
-    // store the results of the db query in a variable called postData. should use something that "finds all" from the Post model. may need a where clause!
+    // Hold the results of the database query in a variable "postData".  Use something that "finds all" from the Post model. 
 
     const postData = await Post.findAll({
       where:{"userId": req.session.userId},
       include: [User]
     });
-    // this sanitizes the data we just got from the db above (you have to create the above)
+    // this cleans the data information received from the database above 
     const posts = postData.map((post) => post.get({ plain: true }));
 console.log(posts);
-    // fill in the view to be rendered -DONE!
+    // Write in the view to be activited
     res.render('all-posts', {
-      // this is how we specify a different layout other than main! no change needed
+      // this is how we specify a various layout other than main! no changes are needed
       layout: 'dashboard',
-      // coming from line 10 above, no change needed
+      // No changes are needed
       posts,
     });
   } catch (err) {
@@ -26,26 +26,26 @@ console.log(posts);
   }
 });
 
-// AFTER CLICK ON NEW POST BUTTON
+// After click on the POST button
 router.get('/new', withAuth, (req, res) => {
-  // what view should we send the client when they want to create a new-post? (change this next line) - DONE!
+  // what view should we send the client when they want to create a new-post? 
   res.render('new-post', {
-    // again, rendering with a different layout than main! no change needed
+    // Activating with a various layout than main!
     layout: 'dashboard',
   });
 });
 
-// WHEN WE CLICK ON THE POST ITSELF
+// When clicking on the POST itself
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
-    // what should we pass here? we need to get some data passed via the request body -DONE!
+    // need to get some data information passed via the request body 
     const postData = await Post.findByPk(req.params.id);
 
     if (postData) {
-      // serializing the data
+      // serializing the data information
       const post = postData.get({ plain: true });
       console.log(post);
-      // which view should we render if we want to edit a post?
+      // which view should we activate if we want to edit the post
       res.render('edit-post', {
         layout: 'dashboard',
         post,

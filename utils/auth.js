@@ -3,8 +3,8 @@ const withAuth = (req, res, next) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
   } else {
-    // If the user is logged in, execute the route function that will allow them to view the page
-    // We call next() if the user is authenticated
+    // If the user is logged in, activate the route application that will allow them to view the page
+    // We call next, if the user is authenticated
     next();
   }
 };
