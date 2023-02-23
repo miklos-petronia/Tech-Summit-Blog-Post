@@ -93,5 +93,5 @@ N/A
 ## BugReport
 
 - [Github](https://github.com/miklos-petronia)
-- [email](mailto:miklos.petronia@hotmail.com)
+- [Email](mailto:miklos.petronia@hotmail.com)
 
