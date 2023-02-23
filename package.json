@@ -19,9 +19,9 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "node": "^12.11.1",
     "sequelize": "^6.28.2"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/miklos-petronia/Tech-Summit-Blog-Post.git"
