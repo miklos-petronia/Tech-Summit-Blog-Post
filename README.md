@@ -74,6 +74,10 @@ Install dependencies and activate schema.sql. Then run npm run seed and then npm
 
 
 ### Application Screenshot:
+![image](https://user-images.githubusercontent.com/113649566/220916515-5ca45114-a0f9-470a-92c5-4e6aa5e310be.png)
+![image](https://user-images.githubusercontent.com/113649566/220916745-886537a8-1603-4389-acec-7cbb7e96b662.png)
+![image](https://user-images.githubusercontent.com/113649566/220917083-1084e0c1-f597-44c1-bbe7-946994f0d618.png)
+
 
 ## License 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
@@ -89,5 +93,5 @@ N/A
 ## BugReport
 
 - [Github](https://github.com/miklos-petronia)
-- [email](mailto:miklos.petronia@hotmail.com)
+- [Email](mailto:miklos.petronia@hotmail.com)
 
